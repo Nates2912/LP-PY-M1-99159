@@ -4,22 +4,31 @@ os.system ("cls")
 valor_p = float(input("Price:  R$ "))
 
 print (f"Choose the type of payment: ")
-print ("1 - Money")
-print ("2 - Card")
+
+print("""
+1 - Money
+2 - Card
+""")
 
 pay_type = int(input("Option: "))
 
 
 match pay_type:
     case 1:
+        #obtendo o valor do desconto
         desconto = valor_p * 0.10
         total = valor_p - desconto
+        
+        print(f"Price: R$ {valor_p:.2f}")
+        print ("Payment Type: Money")
+        print (f"Discount: {desconto}")
         print (f"Final price: R$ {total: .2f}")
 
     case 2:
         parcelas = int(input("How many parcels is it gonna be? (Max is 6): "))
         if parcelas >6 or parcelas <1:
             print("Invalid number.")
+        #valor_par = valor_p / quant_par
         else:
          valor_par = valor_p / parcelas
         print(f"Price: R$ {valor_p:.2f}")
@@ -30,3 +39,5 @@ match pay_type:
 
     case _:
         print("Bruh. How.")
+
+        print("Come back soon!")
