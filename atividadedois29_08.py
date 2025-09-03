@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #Cleaning the terminal
 
 #USANDO OR (OU)
@@ -29,5 +29,4 @@ print("")
 if nota < 0 or nota > 10:
     print("Invalid input.")
 else:
->>>>>>> c7f1a3a53dabc9fb7ba5986d4f5e76fcd31173be
     print (f"Grade: {nota}")ade: {nota}")
