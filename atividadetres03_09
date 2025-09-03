@@ -1,0 +1,21 @@
+#Limpando terminal
+import os 
+os.system("cls")
+
+food = input("Choose your meal.\n")
+
+match food:
+    case "1":
+        print("Picanha Steak: 25R$")
+    case "2":
+        print("Lasagna: 20R$")
+    case "3":
+        print("Strogonoff: 18R$")
+    case "4":
+        print("Steak with Onions: 15R$")
+    case "5":
+        print("Egg with Bread: 5R$")
+    case _:
+        print("invalid Answer")
+
+print (food)
