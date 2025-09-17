@@ -1,4 +1,4 @@
-#crie um programa que solicite o usuario e o login, se tiver errado ele vai pedir denovo
+#crie um programa que solicite o usuario e o login, se tiver errado ele vai pedir denovo, se passar de 3, ele para
 
 import os
 os.system("cls")
