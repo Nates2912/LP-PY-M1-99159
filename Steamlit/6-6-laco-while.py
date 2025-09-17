@@ -27,9 +27,3 @@ if st.button("Login"):
              st.error("No attempts left.")
 else: 
     st.info('Insert the User and password.')
-
-
-
-            
-    
-        
