@@ -29,16 +29,19 @@ while True:
     if num == 0:
         break
 
+#Operação ternária
+mediap = somap / par if par != 0 else 0
+mediag = somag / tot_num if tot_num != 0 else 0
 
-if par != 0:
-    mediap= somap / par
-else:
-    mediap = 0 
+# if par != 0:
+#     mediap= somap / par
+# else:
+#     mediap = 0 
 
-if tot_num != 0:
-    mediag = somag / tot_num
-else: 
-    mediag = 0
+# if tot_num != 0:
+#     mediag = somag / tot_num
+# else: 
+#     mediag = 0
     
 print(f"Par: {par}")
 print(f"Odd: {imp}")
