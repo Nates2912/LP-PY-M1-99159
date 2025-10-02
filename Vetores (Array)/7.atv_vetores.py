@@ -4,6 +4,7 @@ os. system ("cls")
 lista_preco = []
 lista_pratos = []
 
+
 while True:
     opcao = int(input(""" 
     Code \t Meal           Cost
