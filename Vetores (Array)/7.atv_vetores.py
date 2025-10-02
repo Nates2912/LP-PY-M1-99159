@@ -3,56 +3,52 @@ os. system ("cls")
 
 lista_preco = []
 lista_pratos = []
-totalprice = 0
 
 while True:
-    print(""" 
+    opcao = int(input(""" 
     Code \t Meal           Cost
     1 \t Steak          R$25,00
     2 \t Lasagna        R$20,00
     3 \t Strogonoff     R$18,00
     4 \t Steak + Onions R$15,00
     5 \t Egg Sandwich   R$5,00
-    """)
+                       
+    Input in the desired meal: """))
 
-    codigo = input("Choose your meal: ")
-    
-    match codigo:
-        case "1":
+    match opcao:
+        case 1:
                 prato = "Picanha Steak"
                 preco = 25
-        case "2":
+        case 2:
                 prato ="Lasagna"
                 preco =20
-        case "3":
+        case 3:
                 prato = "Strogonoff"
                 preco = 18
-        case "4":
+        case 4:
                 prato = "Steak with Onions"
                 preco = 15
-        case "5":
+        case 5:
                 prato = "Egg Sandwich"
                 preco = 5
         case _:
-                print ("Invalid Answer")
-                print ("Try again...")
+                print ("Invalid Answer. \n Try again. \n")
 
-    totalprice = totalprice + preco
+    if opcao >= 1 and opcao <= 5:
+        lista_pratos.append(prato)
+        lista_preco.append(preco)
 
-    lista_pratos.append(prato)
-    lista_preco.append(preco)
+    resposta = input("Anything else? (Use Y or N):").upper()
+    if resposta == "N":
+        break
+    os. system ("cls")
 
-    moreord = input("Anything else? (Use Y or N):").upper()
+if sum(lista_preco) == 0:
+    print("No meal was chosen.")
+else: 
+    print("=CHOSEN MEALS=")
+    #for each
+    for prato in lista_pratos:
+        print(f"Prato: {prato}")
 
-    if moreord == "N":
-           break
-    
-    os.system("cls")
-
-for prato in lista_pratos:
-    print(f"Order: {prato}")
-
-for preco in lista_preco:
-    print(f"Price:{preco}")
-    
-print(f"Total: {totalprice}")
+print(f"Total: R$ {sum(lista_preco):.2f}")
