@@ -1,0 +1,26 @@
+import os
+os.system ("cls")
+
+# print("=========")
+# print("==SENAI==")
+# print("=========")
+
+name = input("Type in your name: ")
+print("=========")
+# print("==SENAI==")
+# print("=========")
+# os.system ("cls")
+age = int(input("Type in your age: "))
+print("=========")
+# print("==SENAI==")
+# print("=========")
+# os.system ("cls")
+weight = float(input("Type in your weight: "))
+print("=========")
+# print("==SENAI==")
+# print("=========")
+# os.system ("cls")
+
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"Weight: {weight}")
