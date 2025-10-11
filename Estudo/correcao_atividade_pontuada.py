@@ -3,7 +3,6 @@ import os
 os.system("cls")
 
 #contas e entradas de informacao eu acho
-
 def limpa_tela():
     os.system("cls")        
 
@@ -18,6 +17,7 @@ def calcular_inss (slr):
             desconto_inss = slr * 0.014
         return  desconto_inss
 
+
 def calcular_irrf(slr):
     if slr <= 2428:
         desconto_irrf = 0
@@ -31,6 +31,9 @@ def calcular_irrf(slr):
         desconto_irrf = slr * 0.275
     return desconto_irrf
 
+
+    
+
 def calcular_refeicao (refeicao):
     desconto2 = refeicao * 0.20
     return desconto2
@@ -43,12 +46,17 @@ def calcular_transporte (transporte, slr):
     return transporte
 
 def calcular_plano_saude (dependentes):
-    plano_saude = dependentes * 150.00
+    if dependentes == "S":
+        plano_saude = qtd_dependente * 150.00
+    else:
+        plano_saude = 0
     return plano_saude
+
 
 def soma_desconto(calcular_inss, calcular_irrf , calcular_transporte, calcular_refeicao, calcular_plano_saude):
     desconto_final = calcular_inss + calcular_irrf + calcular_transporte + calcular_refeicao + calcular_plano_saude
     return desconto_final
+
 
 def resultados(salario_bruto, desconto_final):
     salario_real = salario_bruto - desconto_final
@@ -58,7 +66,7 @@ def resultados(salario_bruto, desconto_final):
     print(f"Vale refeição: {vale_refeicao}")
     print(f"O salário liquido após os descontos e acréscimos será: {salario_real:.2f}")
 
-#perguntas/inputs do usuario
+#perguntas
 
 user_resposta = "0604"
 senha_resposta = "1234"
@@ -74,7 +82,9 @@ while True:
         salario = float(input("Seu salário: "))
         vale_refeicao = float(input("Quanto custa o vale refeição?: "))
         vale_transporte = input("Usa vale transporte? (Use S ou N):").upper()
-        dependentes = int(input("Quantos dependentes você tem?: ").upper())
+        dependentes = input("Tem dependentes?: ").upper()
+        if dependentes == "S":
+            qtd_dependente = int(input("Quantos?: "))
         break
     else:
         print("Inválido, tente denovo.")
