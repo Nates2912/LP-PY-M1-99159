@@ -2,25 +2,32 @@ import os
 
 os.system("cls")
 
+#lista 
+lista_notas = []
+
 # função sem parametros (parentesis) e sem retorno
 def limpa_tela():
     os.system("cls")
 
 #funcao com parametros (parentesis) e com retorno
-def calcular_centimetros (n1):
-    return (n1 * 100)
+def calcular_media (avr, soma):
+    soma = sum(lista_notas)
+    avr = soma / 3
+    return (avr)
 
 
 #funçao com parametros e sem retorno
-def mostrar_resultado(centimetros):
-    print(f"Centimetros: {centimetros}")
+def mostrar_notas(notas):
+    print(f"Grades: {notas}")
 
 # chamando a funçao
 limpa_tela()
-numero1 = float(input("Metros: "))
+for i in range (3):
+    nota = int(input(f"Input the {i+1}º grade: "))
+    lista_notas.append(nota)
 
 #funcao com parametros (parentesis) e com retorno
-centimetros = calcular_centimetros(numero1)
+notas = calcular_media(nota)
 #funçao com parametros e sem retorno
-mostrar_resultado(centimetros)
+mostrar_notas(notas)
 
