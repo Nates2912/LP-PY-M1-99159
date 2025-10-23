@@ -12,8 +12,14 @@ class Pessoa:
     peso: float
     altura: float
 
+
 #fazendo pessoa1 ser igual a Pessoa 
-pessoa1 = Pessoa("Alice",30, 55 ,1.67)
+print("Solicitando os dados da pessoa")
+pessoa1 = Pessoa(nome=input("Digite seu nome: "),
+                 idade=int(input("Digite sua idade: ")), 
+                 peso=float(input("Digite seu peso: ")) ,
+                 altura=float(input("Digite sua altura: ")))
 
 #usando pessoa1 ja que foi definido que e igual a classe Pessoa
+print("\n Exibindo os dados da pessoa")
 print(f"Nome: {pessoa1.nome}\nIdade: {pessoa1.idade}\nPeso: {pessoa1.peso}kg\nAltura: {pessoa1.altura}m")
