@@ -4,15 +4,23 @@ from dataclasses import dataclass
 os.system("cls")
 
 # Criando uma classe.
+#Cliente e uma pessoa?
+#Pode ter CPF? Endereço? Nome completo? Título de eleitor? E-mail? Telefone?
+#Seu sistema precisa de algumas informaçoes para realizar uma venda.
+#Para uma venda(entrega, nesse caso) são usados endereço, nome, telefone.
+#Se
+
 @dataclass
 class Cliente:
     nome: str
     endereco: str
+    telefone: str
 
     #Função apenas dessa classse
     def mostrar_dados_cliente(self):
         print(f"Nome: {self.nome}")
         print(f"Endereço: {self.endereco}")
+        print(f"Telefone: {self.telefone}")
 
 # Criando dois clientes com as características
 # definidas na classe.
