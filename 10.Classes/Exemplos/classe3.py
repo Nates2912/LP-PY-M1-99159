@@ -18,12 +18,12 @@ class Cliente:
 
     #Função apenas dessa classse
     def mostrar_dados_cliente(self):
-        print(f"Nome: {self.nome}")
-        print(f"Endereço: {self.endereco}")
-        print(f"Telefone: {self.telefone}")
+        print(f"Nome: {self.nome}\n Endereço: {self.endereco}\nTelefone: {self.telefone}")
 
 # Criando dois clientes com as características
 # definidas na classe.
-cliente1 = Cliente(nome="Marta", endereco="Rua A.")
-cliente2 = Cliente(nome="João", endereco="Rua C.")
+cliente1 = Cliente(nome="Marta", endereco="Rua A.", telefone= "71-98876-2334" )
+
+cliente1.mostrar_dados_cliente
+
 
