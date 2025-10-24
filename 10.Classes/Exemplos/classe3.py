@@ -7,8 +7,8 @@ os.system("cls")
 #Cliente e uma pessoa?
 #Pode ter CPF? Endereço? Nome completo? Título de eleitor? E-mail? Telefone?
 #Seu sistema precisa de algumas informaçoes para realizar uma venda.
-#Para uma venda(entrega, nesse caso) são usados endereço, nome, telefone.
-#Se
+#Para uma venda(entrega, nesse caso) são usados endereço, nome, telefone. Basicamente, um mini-mundo.
+#O proposito da classe e delimitar as caracteristicas de uma pessoa somente para o que o sistema ´precisa
 
 @dataclass
 class Cliente:
