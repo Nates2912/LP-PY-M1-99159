@@ -22,8 +22,16 @@ class Cliente:
 
 # Criando dois clientes com as características
 # definidas na classe.
-cliente1 = Cliente(nome="Marta", endereco="Rua A.", telefone= "71-98876-2334" )
 
-cliente1.mostrar_dados_cliente
+lista_de_clientes = []
+
+for i in range(3):
+    cliente1 = Cliente(nome="Marta", endereco="Rua A.", telefone= "71-98876-2334" )
+    lista_de_clientes.append(cliente1)
+
+#Mostrando os dados do cliente
+for cliente in lista_de_clientes:
+    #posicao: 0, 1, 2
+    cliente1.mostrar_dados_cliente
 
 
