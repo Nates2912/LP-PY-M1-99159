@@ -17,10 +17,10 @@ class Pessoa:
         print(f"Nome: {self.nome}\nIdade: {self.idade}\nPeso: {self.peso}\nAltura: {self.altura}")
 
 
-print("Solicitando os dados da pessoa")
 
 lista_pessoas = []
 for i in range(4):
+    print("\nSolicitando os dados da pessoa")
     pessoa = Pessoa(nome=input("Digite seu nome: "),
                     idade=input("Digite sua idade: "),
                     peso=input("Digite seu peso: "),
@@ -29,7 +29,7 @@ for i in range(4):
 
 os.system("cls")
 
-print("\nExibindo os dados pessoais")
 for pessoa in lista_pessoas:
+    print("\nExibindo os dados do cliente")
     pessoa.mostrar_dados()
 
