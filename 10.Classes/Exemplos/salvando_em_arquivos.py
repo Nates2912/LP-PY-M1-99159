@@ -1,8 +1,8 @@
 import os
 os.system("cls")
 
-#exemplo - texto que desejo salvar
-texto = "Senai"
+quantidade_alunos= 2
+lista_alunos = []
 
 from dataclasses import dataclass
 
@@ -10,17 +10,23 @@ from dataclasses import dataclass
 class Aluno:
     nome: str
     idade: int
-   
-lista_alunos = []
+    telefone: str
+    email: str
 
-for i in range (3):
-    alunos = Aluno (nome= input("Digite seu nome: "), idade= int(input("Digite seu idade: ")))
+print("Solicitando dados:")
+for i in range (quantidade_alunos):
+    alunos = Aluno (
+        nome= input("\nDigite seu nome: "), 
+        idade= int(input("Digite sua idade: ")), 
+        telefone= input("Digite seu telefone: "), 
+        email= input("Digite seu E-mail: ")
+    )
     lista_alunos.append(alunos)
 
-print("Salvando dados")
+print("Exibindo dados: ")
 arquivo = "dados_alunos.txt"
 
 with open(arquivo, "a") as arquivo_alunos: # O "a" adiciona e e nao apaga o antigo
     for alunos in lista_alunos:
-        arquivo_alunos.write(f"{alunos.nome}, {alunos.idade}\n") 
+        arquivo_alunos.write(f"{alunos.nome},\n {alunos.idade},\n{alunos.telefone},\n{alunos.email}") 
     print("Salvo com sucesso!")
