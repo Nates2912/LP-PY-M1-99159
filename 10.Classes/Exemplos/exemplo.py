@@ -2,7 +2,7 @@ import os
 os.system("cls")
 
 #exemplo - texto que desejo salvar
-texto = "Senai"
+texto = input("Nome: ")
 
 
 #definir nome do arquivo para salvar
