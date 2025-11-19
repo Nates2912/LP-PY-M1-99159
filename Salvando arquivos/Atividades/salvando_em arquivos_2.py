@@ -35,6 +35,7 @@ print("\nExibindo todos os pacientes:")
 try:
     #"r" read - leitura
     with open (nome_do_arquivo, "r") as arquivo:
+        #RECEBE TODOS OS DADOS DE UM ARQUIVO DE UMA SO VEZ
         linhas = arquivo.readlines()
         for linha in linhas:
             print(f"-{linha.strip()}")
