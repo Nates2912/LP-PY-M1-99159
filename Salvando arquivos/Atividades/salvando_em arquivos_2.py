@@ -1,5 +1,5 @@
 import os
-os.system
+os.system("cls")
 from dataclasses import dataclass
 
 @dataclass
@@ -25,8 +25,18 @@ for i in range (QUANTIDADE_PACIENTES):
             arquivos_pacientes.write(f"{paciente.nome}, {paciente.idade}")
             print("Dados salvos com sucesso.")
 
-print("\nExibindo lista de pacientes")
-for paciente in lista_de_pacientes:
-    paciente.exibir_dados()
+# print("\nExibindo lista de pacientes")
+# for paciente in lista_de_pacientes:
+#     paciente.exibir_dados()
 
 #csv e mais usado para dados
+
+print("\nExibindo todos os pacientes:")
+try:
+    #"r" read - leitura
+    with open (nome_do_arquivo, "r") as arquivo:
+        linhas = arquivo.readlines()
+        for linha in linhas:
+            print(f"-{linha.strip()}")
+except FileNotFoundError: 
+    print("O arquivo não foi encontrado.")
