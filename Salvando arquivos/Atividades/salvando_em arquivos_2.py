@@ -22,7 +22,7 @@ for i in range (QUANTIDADE_PACIENTES):
     nome_do_arquivo = "dados_pacientes2.csv"
     with open(nome_do_arquivo, "a") as arquivos_pacientes:
         for paciente in lista_de_pacientes:
-            arquivos_pacientes.write(f"{paciente.nome}, {paciente.idade}")
+            arquivos_pacientes.write(f"{paciente.nome}, {paciente.idade}\n")
             print("Dados salvos com sucesso.")
 
 # print("\nExibindo lista de pacientes")
@@ -46,11 +46,11 @@ print("\nExibindo todos os pacientes: ")
 lista = []
 try: 
     with open (nome_do_arquivo, "r") as arquivo:
-        lista_de_pacientes = arquivo.readlines()
-        for paciente in lista_de_pacientes:
+        lista_todos_pacientes = arquivo.readlines()
+        for paciente in lista_todos_pacientes:
             nome, idade = paciente.strip().split(",")
             dados_paciente = Paciente(nome=nome, idade=int(idade))
-            lista.append(paciente)
+            lista.append(dados_paciente)
     for paciente in lista:
         paciente.exibir_dados()
 except FileNotFoundError:
