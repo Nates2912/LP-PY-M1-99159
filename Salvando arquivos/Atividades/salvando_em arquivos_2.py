@@ -49,6 +49,7 @@ try:
         lista_de_pacientes = arquivo.readlines()
         for paciente in lista_de_pacientes:
             nome, idade = paciente.strip().split(",")
+            dados_paciente = Paciente(nome=nome, idade=int(idade))
             lista.append(paciente)
     for paciente in lista:
         paciente.exibir_dados()
