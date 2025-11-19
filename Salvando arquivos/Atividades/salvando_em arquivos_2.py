@@ -28,3 +28,5 @@ for i in range (QUANTIDADE_PACIENTES):
 print("\nExibindo lista de pacientes")
 for paciente in lista_de_pacientes:
     paciente.exibir_dados()
+
+#csv e mais usado para dados
