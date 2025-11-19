@@ -36,8 +36,8 @@ try:
     #"r" read - leitura
     with open (nome_do_arquivo, "r") as arquivo:
         #RECEBE TODOS OS DADOS DE UM ARQUIVO DE UMA SO VEZ
-        linhas = arquivo.readlines()
-        for linha in linhas:
-            print(f"-{linha.strip()}")
+        lista_de_pacientes  = arquivo.readlines()
+        for paciente in lista_de_pacientes:
+            print(f"-{paciente.strip()}")
 except FileNotFoundError: 
     print("O arquivo não foi encontrado.")
