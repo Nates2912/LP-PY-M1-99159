@@ -1,28 +1,35 @@
 import os
-os.system
+os.system("cls")
 from dataclasses import dataclass
 
 @dataclass
 class Paciente:
     nome: str
     idade: str
+    peso: str
+    altura: str
+    cpf: str
 
     def exibir_dados(self):
-        print(f"Nome: {self.nome} \nIdade: {self.idade} ")
+        print(f"Nome: {self.nome} \nIdade: {self.idade} \nPeso: {self.peso} \nAltura: {self.altura } \nCPF: {self.cpf}")
 
 lista_de_pacientes = []
 QUANTIDADE_PACIENTES = 2
 
 for i in range (QUANTIDADE_PACIENTES):
     paciente = Paciente(
-    nome = input ("Digite seu nome:"), idade = int(input("Digite sua Idade:"))
+    nome = input ("Digite seu nome: "),
+    idade = int(input("Digite sua Idade: ")),
+    peso = float(input("Digite seu peso: ")),
+    altura = float(input("Digite sua altura:")),
+    cpf = int(input("Digite seu CPF: "))
     )
     lista_de_pacientes.append(paciente)
 
     nome_do_arquivo = "dados_pacientes.csv"
     with open(nome_do_arquivo, "a") as arquivos_pacientes:
         for paciente in lista_de_pacientes:
-            arquivos_pacientes.write(f"{paciente.nome}, {paciente.idade}")
+            arquivos_pacientes.write(f"Nome: {paciente.nome}\nIdade: {paciente.idade}\nPeso: {paciente.peso}\nAltura: {paciente.altura:.1f}\nCPF: {paciente.cpf}\n")
             print("Dados salvos com sucesso.")
 
 print("\nExibindo lista de pacientes")
