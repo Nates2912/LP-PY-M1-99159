@@ -15,7 +15,7 @@ QUANTIDADE_PACIENTES = 2
 
 for i in range (QUANTIDADE_PACIENTES):
     paciente = Paciente(
-    nome = input ("Digite seu nome:"), idade = int(input("Digite sua Idade:"))
+    nome = input ("Digite seu nome: "), idade = int(input("Digite sua Idade: "))
     )
     lista_de_pacientes.append(paciente)
 
