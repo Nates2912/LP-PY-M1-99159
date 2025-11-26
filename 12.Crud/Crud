@@ -1,8 +1,37 @@
 import os
-os.system("clear || clear")
+os.system("cls || clear")
 
 # crud usando lista
 # create = criar / salvar
 # read = buscar selecionar
 # update = atualizar modificar
 # delete = excluir
+
+#Criando uma lista
+lista_clientes = []
+
+#Create
+print("CREATE - Adicionar / Inserir")
+nome = "Willow"
+lista_clientes.append(nome)
+
+print(f"O nome: {nome} foi inserido com sucesso.")
+
+#Read
+print("\nRead - Ler / Mostrar")
+print(lista_clientes)
+
+#Update
+print("\nUpdate - Atualizar / Alterar")
+nome_para_atualizar = "Marta"
+if nome_para_atualizar in lista_clientes:
+    novo_nome = "Raven"
+    indice = lista_clientes.index(nome_para_atualizar)
+    lista_clientes[indice] = novo_nome
+    print(f"O nome {nome_para_atualizar} foi atualizado para {novo_nome}")
+else:
+    print(f"O nome {nome_para_atualizar} não foi encontrado.")
+
+print(lista_clientes)
+
+#Delete
