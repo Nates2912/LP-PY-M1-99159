@@ -27,27 +27,30 @@ QUANTIDADE_FUNCIONARIOS = 1
 QUANTIDADE_CLIENTES= 1
 
 for i in range (QUANTIDADE_FUNCIONARIOS):
+    print ("Funcionários")
     funcionario = Funcionario(
     nome= input ("Digite seu nome: "), dataadmissao= input("Digite sua data de admissão: "), matricula= input("Digite sua matricula: "), endereco= input("Digite seu endereço: ")
     )
     lista_de_funcionarios.append(funcionario)
-
+    
+for i in range (QUANTIDADE_CLIENTES):
+    print ("==Cliente==")
     cliente = Cliente(
-    nome= input ("Digite seu nome: "), data_aniversario= input ("Digite sua data de admissão: "), endereco= input("Digite seu endereço: ")
+    nome= input ("Digite seu nome: "), data_aniversario= input ("Digite sua data de nascimento: "), endereco= input("Digite seu endereço: ")
     )
     lista_de_clientes.append(cliente)
 
 #criaçao do arquivo
 
     nome_do_arquivo = "funcionarios.csv"
-    with open(nome_do_arquivo, "r") as arquivos_funcionarios:
+    with open(nome_do_arquivo, "a") as arquivos_funcionarios:
         for funcionario in lista_de_funcionarios:
-            arquivos_funcionarios.write(f"{funcionario.nome}, {funcionario.dataadmissao}, {funcionario.matricula}, {funcionario.endereco}\n")
+            arquivos_funcionarios.write(f"Nome: {funcionario.nome} \nData de admissão: {funcionario.dataadmissao}\n Matrícula: {funcionario.matricula}\n Endereço: {funcionario.endereco}\n")
             print("Dados salvos com sucesso.")
     nome_do_arquivo2 = "clientes.csv"
-    with open(nome_do_arquivo2, "r") as arquivos_clientes:
+    with open(nome_do_arquivo2, "a") as arquivos_clientes:
         for cliente in lista_de_clientes:
-            arquivos_clientes.write(f"{cliente.nome}, {cliente.data_aniversario}, {cliente.endereco}\n")
+            arquivos_clientes.write(f"Nome: {cliente.nome} \nNascimento: {cliente.data_aniversario} \nEndereço: {cliente.endereco}\n")
             print("Dados salvos com sucesso.")
 
 print("\nExibindo todos os funcionários: ")
