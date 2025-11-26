@@ -1,0 +1,8 @@
+import os
+os.system("clear || clear")
+
+# crud usando lista
+# create = criar / salvar
+# read = buscar selecionar
+# update = atualizar modificar
+# delete = excluir
