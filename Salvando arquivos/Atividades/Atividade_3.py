@@ -27,14 +27,14 @@ QUANTIDADE_FUNCIONARIOS = 1
 QUANTIDADE_CLIENTES= 1
 
 for i in range (QUANTIDADE_FUNCIONARIOS):
-    print ("==Funcionários==")
+    print ("Funcionários")
     funcionario = Funcionario(
     nome= input ("Digite seu nome: "), dataadmissao= input("Digite sua data de admissão: "), matricula= input("Digite sua matricula: "), endereco= input("Digite seu endereço: ")
     )
     lista_de_funcionarios.append(funcionario)
     
 for i in range (QUANTIDADE_CLIENTES):
-    print ("==Clientes==")
+    print ("==Cliente==")
     cliente = Cliente(
     nome= input ("Digite seu nome: "), data_aniversario= input ("Digite sua data de nascimento: "), endereco= input("Digite seu endereço: ")
     )
@@ -52,6 +52,7 @@ for i in range (QUANTIDADE_CLIENTES):
         for cliente in lista_de_clientes:
             arquivos_clientes.write(f"{cliente.nome}, {cliente.data_aniversario}, {cliente.endereco}\n")
             print("Dados salvos com sucesso.")
+
 
 print("\nExibindo todos os funcionários: ")
 lista = []
