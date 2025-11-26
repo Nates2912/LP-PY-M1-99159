@@ -19,7 +19,7 @@ class Cliente:
     endereco: str
 
     def exibir_dados(self):
-        print(f"==FUNCIONÁRIOS== \n Nome: {self.nome} \nData de nascimento: {self.data_aniversario} \nEndereço: {self.endereco}\n")
+        print(f"==CLIENTES== \n Nome: {self.nome} \nData de nascimento: {self.data_aniversario} \nEndereço: {self.endereco}\n")
 
 lista_de_funcionarios = []
 lista_de_clientes = []
@@ -28,27 +28,34 @@ QUANTIDADE_CLIENTES= 1
 
 for i in range (QUANTIDADE_FUNCIONARIOS):
     funcionario = Funcionario(
-    nome= input ("Digite seu nome: "), dataadmissao= input("Digite sua data de admissão: "), matricula= ("Digite sua matricula: "), endereco= ("Digite seu endereço: ")
+    nome= input ("Digite seu nome: "), dataadmissao= input("Digite sua data de admissão: "), matricula= input("Digite sua matricula: "), endereco= input("Digite seu endereço: ")
     )
     lista_de_funcionarios.append(funcionario)
 
     cliente = Cliente(
-    nome= input ("Digite seu nome: "), data_aniversario = ("Digite sua data de admissão: "), endereco= ("Digite seu endereço: ")
+    nome= input ("Digite seu nome: "), data_aniversario= input ("Digite sua data de admissão: "), endereco= input("Digite seu endereço: ")
     )
     lista_de_clientes.append(cliente)
 
 #criaçao do arquivo
 
     nome_do_arquivo = "funcionarios.csv"
-    with open(nome_do_arquivo, "a") as arquivos_funcionarios:
+    with open(nome_do_arquivo, "r") as arquivos_funcionarios:
         for funcionario in lista_de_funcionarios:
             arquivos_funcionarios.write(f"{funcionario.nome}, {funcionario.dataadmissao}, {funcionario.matricula}, {funcionario.endereco}\n")
             print("Dados salvos com sucesso.")
     nome_do_arquivo2 = "clientes.csv"
-    with open(nome_do_arquivo2, "a") as arquivos_clientes:
+    with open(nome_do_arquivo2, "r") as arquivos_clientes:
         for cliente in lista_de_clientes:
-            arquivos_clientes.write(f"{cliente.nome}, {cliente.dataadmissao}, {cliente.matricula}, {cliente.endereco}\n")
+            arquivos_clientes.write(f"{cliente.nome}, {cliente.data_aniversario}, {cliente.endereco}\n")
             print("Dados salvos com sucesso.")
+
+print("\nExibindo todos os funcionarios: ")
+for funcionario in lista_de_funcionarios:
+         funcionario.exibir_dados()
+print("\nExibindo todos os funcionarios: ")
+for cliente in lista_de_clientes:
+         cliente.exibir_dados()
 
 # print("\nExibindo todos os funcionarios: ")
 # lista = []
