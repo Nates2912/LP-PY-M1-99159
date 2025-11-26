@@ -50,23 +50,31 @@ for i in range (QUANTIDADE_FUNCIONARIOS):
             arquivos_clientes.write(f"{cliente.nome}, {cliente.data_aniversario}, {cliente.endereco}\n")
             print("Dados salvos com sucesso.")
 
-print("\nExibindo todos os funcionarios: ")
-for funcionario in lista_de_funcionarios:
-         funcionario.exibir_dados()
-print("\nExibindo todos os funcionarios: ")
-for cliente in lista_de_clientes:
-         cliente.exibir_dados()
+print("\nExibindo todos os funcionários: ")
+lista = []
+try: 
+    with open (nome_do_arquivo, "r") as arquivo:
+        lista_todos_funcionarios = arquivo.readlines()
+        for funcionario in lista_todos_funcionarios:
+            nome, dataadmissao, matricula, endereco = funcionario.strip().split(",")
+            dados_funcionario = Funcionario(nome=nome, dataadmissao=dataadmissao, matricula=matricula, endereco=endereco)
+            lista.append(dados_funcionario)
+    for funcionario in lista:
+        funcionario.exibir_dados()
+except FileNotFoundError:
+    print("Erro.")
 
-# print("\nExibindo todos os funcionarios: ")
-# lista = []
-# try: 
-#     with open (nome_do_arquivo, "r") as arquivo:
-#         lista_todos_funcionarios = arquivo.readlines()
-#         for funcionario in lista_todos_funcionarios:
-#             nome, dataadmissao, matricula, endereco = funcionario.strip().split(",")
-#             dados_funcionario = Funcionario(nome=nome, dataadmissao=dataadmissao, matricula=matricula, endereco=endereco)
-#             lista.append(dados_funcionario)
-#     for funcionario in lista:
-#         funcionario.exibir_dados()
-# except FileNotFoundError:
-#     print("Erro.")
+
+print("\nExibindo todos os clientes: ")
+lista = []
+try: 
+    with open (nome_do_arquivo2, "r") as arquivos_clientes:
+        lista_de_clientes = arquivos_clientes.readlines()
+        for cliente in lista_de_clientes:
+            nome, data_aniversario, endereco = cliente.strip().split(",")
+            dados_cliente = Cliente(nome=nome, data_aniversario=data_aniversario, endereco=endereco)
+            lista.append(dados_cliente)
+    for cliente in lista:
+        cliente.exibir_dados()
+except FileNotFoundError:
+    print("Erro.")
