@@ -35,3 +35,12 @@ else:
 print(lista_clientes)
 
 #Delete
+print("\nDelete - Excluir / Remover")
+nome_para_excluir = "Maria"
+if nome_para_excluir in lista_clientes:
+    lista_clientes.remove(nome_para_excluir)
+    print(f"{nome_para_excluir} foi excluído com sucesso.")
+else:
+    print(f"O nome {nome_para_excluir} não foi encontrado.")
+
+print(lista_clientes)
