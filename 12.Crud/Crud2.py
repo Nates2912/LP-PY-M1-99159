@@ -137,10 +137,12 @@ while True:
         case _:
             print("\nOpção inválida. \nTente novamente.")
 
+    #pausa antes de mudar o menu
     if opcao !='' and opcao!=0:
         time.sleep(3)
     elif opcao == 1:
         time.sleep(1)
     
+    #limpa a tela
     if opcao != 0:
         os.system("cls || clear")
