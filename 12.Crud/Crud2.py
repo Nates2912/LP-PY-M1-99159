@@ -58,3 +58,24 @@ def mostrar_todos_clientes(lista_clientes):
         print(f"{cliente.mostrar_dados()}")
 
 #função para atualizar clientes
+def atualizar_clientes(lista_clientes):
+    if lista_esta_vazia(lista_clientes):
+        return
+    
+    #Mostrar lista
+    mostrar_todos_clientes(lista_clientes)
+    print("\n=== Atualizar dados do cliente ===")
+    nome_buscar = input("\nDigite o nome do cliente: ")
+    cliente_para_atualizar = encontrar_cliente_por_nome(lista_clientes, nome_buscar)
+
+    if cliente_para_atualizar: 
+        print("\nPessoa Encontrada. ")
+        print("\nDigite os novos dados ou deixe em branco para manter o valor atual.")
+
+        print(f"\nNome atual: {cliente_para_atualizar.nome}")
+        novo_nome = input("Novo nome: ")
+
+        print(f"\nE-mail atual: {cliente_para_atualizar.email}")
+
+        
+        print(f"\nTelefone atual: {cliente_para_atualizar.telefone}")
