@@ -13,6 +13,7 @@ class Cliente:
 
     #metodo para mostrar as informações dos clientes
     #método é o nome dado a uma função que pertence a classe
+    #a classe normalmente e maiusculo e o objeto minusculo
 
     def mostrar_dados(self):
         print(f"Nome: {self.nome} \nE-mail: {self.email} \nTelefone: {self.telefone}")
