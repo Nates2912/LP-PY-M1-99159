@@ -53,3 +53,5 @@ def mostrar_todos_clientes(lista_clientes):
     print("\n=== Lista de clientes ===")
     for cliente in lista_clientes:
         print(f"{cliente.mostrar_dados()}")
+
+#função para atualizar clientes
