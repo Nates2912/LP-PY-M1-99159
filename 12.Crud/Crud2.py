@@ -91,3 +91,31 @@ def atualizar_clientes(lista_clientes):
         print(f"\nDados do cliente: {nome_buscar} atualizados com sucesso!")
     else:
         print(f"\nCliente com nome: {nome_buscar} não encontrado.")
+
+#função para um cliente
+def excluir_cliente(lista_cliente):
+    if lista_esta_vazia(lista_clientes):
+        return
+    
+    mostrar_todos_clientes(lista_clientes)
+
+    nome_buscar = input("\nDigite o nome do cliente que deseja excluir: ")
+
+    cliente_para_remover = encontrar_cliente_por_nome(lista_clientes, nome_buscar)
+
+    if cliente_para_remover:
+        lista_cliente.remove(cliente_para_remover)
+        print(f"\nCliente {cliente_para_remover.nome} excluído com sucesso!")
+    else: print(f"\nCielnte com o nome {nome_buscar} não encontrado")
+
+
+#mostrando menu.
+while True:
+    print("""
+===GERENCIADOR DE CLIENTES===       
+    1 \t Adicionar         
+    2 \t Mostrar todos    
+    3 \t Atualizar     
+    4 \t Excluir 
+    0 \t Sair
+            """)
