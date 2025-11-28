@@ -27,7 +27,7 @@ def lista_esta_vazia(lista_clientes):
 
 #função para adicionar um novo cliente na lista
 def adicionar_cliente(lista_clientes):
-    print("\n ===Adicionar novo cliente===")
+    print("\n=== Adicionar novo cliente ===")
     nome = input("Digite seu nome: ")
     email = input("Digite seu e-mail: ")
     telefone = input("Digite seu telefone: ")
@@ -36,4 +36,18 @@ def adicionar_cliente(lista_clientes):
     lista_clientes.append(novo_cliente)
     print(f"\nCliente {nome} adicionado com sucesso!")
 
-#função para 
+#função para encontrar um cliente na lista
+def encontrar_cliente_por_nome(lista_clientes, nome_buscar):
+    nome_buscar_lower = nome_buscar.lower()
+    nome_buscar = input("Digite o nome do cliente: ")
+    for cliente in lista_clientes: 
+        if cliente.nome.lower() == nome_buscar_lower:
+            return cliente
+    return None #significa retornar vazio, sem conteúdo
+
+#funcao para mostrar todos os clientes
+def mostrar_todos_clientes(lista_clientes):
+    if lista_esta_vazia(lista_clientes):
+        return
+    
+print("\n=== Lista de clientes ===")
