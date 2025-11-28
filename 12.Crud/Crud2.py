@@ -112,10 +112,33 @@ def excluir_cliente(lista_cliente):
 #mostrando menu.
 while True:
     print("""
-===GERENCIADOR DE CLIENTES===       
-    1 \t Adicionar         
-    2 \t Mostrar todos    
-    3 \t Atualizar     
-    4 \t Excluir 
-    0 \t Sair
-            """)
+=== GERENCIADOR DE CLIENTES ===       
+1 - Adicionar         
+2 - Mostrar todos    
+3 - Atualizar     
+4 - Excluir 
+0 - Sair
+        """)
+    
+    opcao = int(input("Digite uma das opções acima: "))
+
+    match opcao:
+        case 1:
+            adicionar_cliente(lista_clientes)
+        case 2:
+            mostrar_todos_clientes(lista_clientes)
+        case 3:
+            atualizar_clientes(lista_clientes)
+        case 4: 
+            excluir_cliente(lista_clientes)
+        case 0: 
+            print("Saindo do programa...")
+            break
+        case _:
+            print("\nOpção inválida. \nTente novamente.")
+
+    if opcao !='' and opcao!=0:
+        time.sleep(3)
+    elif opcao == 1:
+        time.sleep(1)
+    
