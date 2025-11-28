@@ -55,7 +55,7 @@ def mostrar_todos_clientes(lista_clientes):
     
     print("\n=== Lista de clientes ===")
     for cliente in lista_clientes:
-        print(f"{cliente.mostrar_dados()}")
+        cliente.mostrar_dados()
 
 #função para atualizar clientes
 def atualizar_clientes(lista_clientes):
@@ -92,7 +92,7 @@ def atualizar_clientes(lista_clientes):
     else:
         print(f"\nCliente com nome: {nome_buscar} não encontrado.")
 
-#função para um cliente
+#função para excluir um cliente
 def excluir_cliente(lista_cliente):
     if lista_esta_vazia(lista_clientes):
         return
