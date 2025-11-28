@@ -142,3 +142,5 @@ while True:
     elif opcao == 1:
         time.sleep(1)
     
+    if opcao != 0:
+        os.system("cls || clear")
