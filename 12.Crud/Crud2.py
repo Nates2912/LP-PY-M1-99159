@@ -146,7 +146,7 @@ while True:
             print("\nOpção inválida. \nTente novamente.")
 
     #pausa antes de mudar o menu
-    if opcao !='' and opcao!=0:
+    if opcao !=1 and opcao!=0:
         time.sleep(3)
     elif opcao == 1:
         time.sleep(1)
