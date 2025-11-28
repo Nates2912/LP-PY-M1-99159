@@ -24,3 +24,16 @@ def lista_esta_vazia(lista_clientes):
         print("Não há clientes cadastrados.")
         return True
     return False
+
+#função para adicionar um novo cliente na lista
+def adicionar_cliente(lista_clientes):
+    print("\n ===Adicionar novo cliente===")
+    nome = input("Digite seu nome: ")
+    email = input("Digite seu e-mail: ")
+    telefone = input("Digite seu telefone: ")
+
+    novo_cliente = Cliente(nome=nome, email=email, telefone=telefone)
+    lista_clientes.append(novo_cliente)
+    print(f"\nCliente {nome} adicionado com sucesso!")
+
+#função para 
