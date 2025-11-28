@@ -3,6 +3,8 @@ import time
 from dataclasses import dataclass
 os.system("cls || clear")
 
+lista_clientes = []
+
 @dataclass
 class Cliente:
     #atributos da classe
