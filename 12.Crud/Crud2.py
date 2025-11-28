@@ -76,6 +76,18 @@ def atualizar_clientes(lista_clientes):
         novo_nome = input("Novo nome: ")
 
         print(f"\nE-mail atual: {cliente_para_atualizar.email}")
-
+        novo_email = input("Novo e-mail: ")
         
         print(f"\nTelefone atual: {cliente_para_atualizar.telefone}")
+        novo_telefone = input("Novo telefone: ")
+
+        if novo_nome:
+            cliente_para_atualizar.nome = novo_nome
+        if novo_email:
+            cliente_para_atualizar.email = novo_email
+        if novo_telefone:
+            cliente_para_atualizar.telefone = novo_telefone
+        
+        print(f"\nDados do cliente: {nome_buscar} atualizados com sucesso!")
+    else:
+        print(f"\nCliente com nome: {nome_buscar} não encontrado.")
