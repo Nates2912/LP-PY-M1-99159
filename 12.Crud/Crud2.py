@@ -120,7 +120,15 @@ while True:
 0 - Sair
         """)
     
-    opcao = int(input("Digite uma das opções acima: "))
+    #evitando erros no programa
+    #caso o usuário digite letras
+    try:
+        opcao = int(input("Digite uma das opções acima: "))
+    except ValueError:
+        print("\nEntrada inválida. Digite um número...")
+        time.sleep(2)
+        os.system("cls || clear")
+        continue
 
     match opcao:
         case 1:
