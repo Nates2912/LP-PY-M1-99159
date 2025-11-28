@@ -42,7 +42,7 @@ def adicionar_cliente(lista_clientes):
 #função para encontrar um cliente na lista
 def encontrar_cliente_por_email(lista_clientes, email_buscar):
     email_buscar_lower = email_buscar.lower()
-    email_buscar = input("Digite o nome do cliente: ")
+    email_buscar = input("Digite o e-mail do cliente: ")
     for cliente in lista_clientes: 
         if cliente.email.lower() == email_buscar_lower:
             return cliente
