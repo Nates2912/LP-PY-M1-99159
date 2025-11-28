@@ -50,4 +50,6 @@ def mostrar_todos_clientes(lista_clientes):
     if lista_esta_vazia(lista_clientes):
         return
     
-print("\n=== Lista de clientes ===")
+    print("\n=== Lista de clientes ===")
+    for cliente in lista_clientes:
+        print(f"{cliente.mostrar_dados()}")
