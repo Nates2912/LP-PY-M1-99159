@@ -83,8 +83,8 @@ def atualizar_clientes(lista_clientes):
         print(f"\nCPF atual: {cliente_para_atualizar.cpf}")
         novo_cpf = input("Novo CPF: ")
 
-        print(f"\nFunção atual: {cliente_para_atualizar.cpf}")
-        novo_cpf = input("Novo CPF: ")
+        print(f"\nFunção atual: {cliente_para_atualizar.funcao}")
+        nova_funcao = input("Nova função: ")
 
         if novo_nome:
             cliente_para_atualizar.nome = novo_nome
@@ -92,6 +92,8 @@ def atualizar_clientes(lista_clientes):
             cliente_para_atualizar.email = novo_email
         if novo_cpf:
             cliente_para_atualizar.cpf = novo_cpf
+        if nova_funcao:
+            cliente_para_atualizar.funcao = nova_funcao
         
         print(f"\nDados do cliente: {nome_buscar} atualizados com sucesso!")
     else:
