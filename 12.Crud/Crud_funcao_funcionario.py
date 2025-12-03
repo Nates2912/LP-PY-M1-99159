@@ -3,7 +3,7 @@ import time
 from dataclasses import dataclass
 os.system("cls || clear")
 
-lista_clientes = []
+lista_funcionarios = []
 
 @dataclass
 class Cliente:
@@ -14,7 +14,7 @@ class Cliente:
     cpf: str
     funcao: str
 
-    #metodo para mostrar as informações dos clientes
+    #metodo para mostrar as informações dos funcionarios
     #método é o nome dado a uma função que pertence a classe
     #a classe normalmente e maiusculo e o objeto minusculo
 
@@ -23,14 +23,14 @@ class Cliente:
 
 
 #função para verificar se a lista tá vazia
-def lista_esta_vazia(lista_clientes):
-    if not lista_clientes:
-        print("Não há clientes cadastrados.")
+def lista_esta_vazia(lista_funcionarios):
+    if not lista_funcionarios:
+        print("Não há funcionarios cadastrados.")
         return True
     return False
 
 #função para adicionar um novo cliente na lista
-def adicionar_cliente(lista_clientes):
+def adicionar_cliente(lista_funcionarios):
     print("\n=== Adicionar novo cliente ===")
     nome = input("Digite seu nome: ")
     email = input("Digite seu e-mail: ")
@@ -38,37 +38,37 @@ def adicionar_cliente(lista_clientes):
     funcao = input("Digite sua função: ")
 
     novo_cliente = Cliente(nome=nome, email=email, cpf=cpf, funcao=funcao)
-    lista_clientes.append(novo_cliente)
+    lista_funcionarios.append(novo_cliente)
     print(f"\nCliente {nome} adicionado com sucesso!")
 
 #função para encontrar um cliente na lista
-def encontrar_cliente_por_nome(lista_clientes, nome_buscar):
+def encontrar_cliente_por_nome(lista_funcionarios, nome_buscar):
     nome_buscar_lower = nome_buscar.lower()
     nome_buscar = input("Digite o nome do cliente: ")
-    for cliente in lista_clientes: 
+    for cliente in lista_funcionarios: 
         if cliente.nome.lower() == nome_buscar_lower:
             return cliente
     return None #significa retornar vazio, sem conteúdo
 
-#funcao para mostrar todos os clientes
-def mostrar_todos_clientes(lista_clientes):
-    if lista_esta_vazia(lista_clientes):
+#funcao para mostrar todos os funcionarios
+def mostrar_todos_funcionarios(lista_funcionarios):
+    if lista_esta_vazia(lista_funcionarios):
         return
     
-    print("\n=== Lista de clientes ===")
-    for cliente in lista_clientes:
+    print("\n=== Lista de funcionarios ===")
+    for cliente in lista_funcionarios:
         cliente.mostrar_dados()
 
-#função para atualizar clientes
-def atualizar_clientes(lista_clientes):
-    if lista_esta_vazia(lista_clientes):
+#função para atualizar funcionarios
+def atualizar_funcionarios(lista_funcionarios):
+    if lista_esta_vazia(lista_funcionarios):
         return
     
     #Mostrar lista
-    mostrar_todos_clientes(lista_clientes)
+    mostrar_todos_funcionarios(lista_funcionarios)
     print("\n=== Atualizar dados do cliente ===")
     nome_buscar = input("\nDigite o nome do cliente: ")
-    cliente_para_atualizar = encontrar_cliente_por_nome(lista_clientes, nome_buscar)
+    cliente_para_atualizar = encontrar_cliente_por_nome(lista_funcionarios, nome_buscar)
 
     if cliente_para_atualizar: 
         print("\nPessoa Encontrada. ")
@@ -101,14 +101,14 @@ def atualizar_clientes(lista_clientes):
 
 #função para excluir um cliente
 def excluir_cliente(lista_cliente):
-    if lista_esta_vazia(lista_clientes):
+    if lista_esta_vazia(lista_funcionarios):
         return
     
-    mostrar_todos_clientes(lista_clientes)
+    mostrar_todos_funcionarios(lista_funcionarios)
 
     nome_buscar = input("\nDigite o nome do cliente que deseja excluir: ")
 
-    cliente_para_remover = encontrar_cliente_por_nome(lista_clientes, nome_buscar)
+    cliente_para_remover = encontrar_cliente_por_nome(lista_funcionarios, nome_buscar)
 
     if cliente_para_remover:
         lista_cliente.remove(cliente_para_remover)
@@ -119,7 +119,7 @@ def excluir_cliente(lista_cliente):
 #mostrando menu.
 while True:
     print("""
-=== GERENCIADOR DE CLIENTES ===       
+=== GERENCIADOR DE FUNCIONÁRIOS ===       
 1 - Adicionar         
 2 - Mostrar todos    
 3 - Atualizar     
@@ -139,13 +139,13 @@ while True:
 
     match opcao:
         case 1:
-            adicionar_cliente(lista_clientes)
+            adicionar_cliente(lista_funcionarios)
         case 2:
-            mostrar_todos_clientes(lista_clientes)
+            mostrar_todos_funcionarios(lista_funcionarios)
         case 3:
-            atualizar_clientes(lista_clientes)
+            atualizar_funcionarios(lista_funcionarios)
         case 4: 
-            excluir_cliente(lista_clientes)
+            excluir_cliente(lista_funcionarios)
         case 0: 
             print("Saindo do programa...")
             break
