@@ -80,8 +80,11 @@ def atualizar_clientes(lista_clientes):
         print(f"\nE-mail atual: {cliente_para_atualizar.email}")
         novo_email = input("Novo e-mail: ")
         
-        print(f"\ncpf atual: {cliente_para_atualizar.cpf}")
-        novo_cpf = input("Novo cpf: ")
+        print(f"\nCPF atual: {cliente_para_atualizar.cpf}")
+        novo_cpf = input("Novo CPF: ")
+
+        print(f"\nFunção atual: {cliente_para_atualizar.cpf}")
+        novo_cpf = input("Novo CPF: ")
 
         if novo_nome:
             cliente_para_atualizar.nome = novo_nome
