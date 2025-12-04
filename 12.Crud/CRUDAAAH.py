@@ -97,11 +97,23 @@ def atualizar_alunos(lista_alunos):
         print(f"\nR.A atual: {aluno_para_atualizar.ra}")
         novo_ra = input("Novo R.A: ")
 
-        print(f"\nR.A atual: {aluno_para_atualizar.curso}")
+        print(f"\nCurso atual: {aluno_para_atualizar.curso}")
         novo_curso = input("Novo curso: ")
 
-        print(f"\nR.A atual: {aluno_para_atualizar.logradouro}")
+        print(f"\nEndereço atual: {aluno_para_atualizar.endereco}")
+        novo_endereco = input("Novo endereço: ")
+
+        print(f"\nLogradouro atual: {aluno_para_atualizar.logradouro}")
         novo_logradouro = input("Novo logradouro: ")
+
+        print(f"\nNúmero atual: {aluno_para_atualizar.numero}")
+        novo_numero = input("Novo número: ")
+        
+        print(f"\nCidade atual: {aluno_para_atualizar.cidade}")
+        novo_cidade = input("Nova cidade: ")
+
+        print(f"\nEstado atual: {aluno_para_atualizar.estado}")
+        novo_estado = input("Novo estado: ")
 
         if novo_nome:
             aluno_para_atualizar.nome = novo_nome
@@ -110,11 +122,21 @@ def atualizar_alunos(lista_alunos):
         if novo_ra:
             aluno_para_atualizar.ra = novo_ra
         if novo_curso:
-            aluno_para_atualizar.ra = novo_curso
+            aluno_para_atualizar.curso = novo_curso
+        if novo_endereco:
+            aluno_para_atualizar.endereco = novo_endereco
+        if novo_logradouro:
+            aluno_para_atualizar.logradouro = novo_logradouro
+        if novo_numero:
+            aluno_para_atualizar.numero = novo_numero
+        if novo_cidade:
+            aluno_para_atualizar.cidade = novo_cidade
+        if novo_estado:
+            aluno_para_atualizar.estado = novo_estado
         
         print(f"\nDados do aluno: {nome_buscar} atualizados com sucesso!")
     else:
-        print(f"\naluno com aniversário: {nome_buscar} não encontrado.")
+        print(f"\nAluno com nome: {nome_buscar} não encontrado.")
 
 #função para excluir um aluno
 def excluir_aluno(lista_aluno):
@@ -123,14 +145,14 @@ def excluir_aluno(lista_aluno):
     
     mostrar_todos_alunos(lista_alunos)
 
-    nome_buscar = input("\nDigite o aniversário do aluno que deseja excluir: ")
+    nome_buscar = input("\nDigite o nome do aluno que deseja excluir: ")
 
     aluno_para_remover = encontrar_aluno_por_nome(lista_alunos, nome_buscar)
 
     if aluno_para_remover:
         lista_aluno.remove(aluno_para_remover)
-        print(f"\naluno {aluno_para_remover.data_de_nascimento} excluído com sucesso!")
-    else: print(f"\nCielnte com o nome {nome_buscar} não encontrado")
+        print(f"\nAluno {aluno_para_remover.nome} excluído com sucesso!")
+    else: print(f"\nAluno com o nome {nome_buscar} não encontrado")
 
 
 #mostrando menu.
