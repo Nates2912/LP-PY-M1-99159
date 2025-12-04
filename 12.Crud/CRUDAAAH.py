@@ -26,7 +26,7 @@ class Aluno:
     #a classe normalmente e maiusculo e o objeto minusculo
 
     def mostrar_dados(self):
-        print(f"\n===ALUNO===\nNome: {self.nome} \nE-mail: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso{self.curso}")
+        print(f"\n===ALUNO===\nNome: {self.nome} \nAniversário: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso{self.curso}")
         print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.estado}")
 
 
@@ -41,7 +41,7 @@ def lista_esta_vazia(lista_alunos):
 def adicionar_aluno(lista_alunos):
     print("\n=== Adicionar novo aluno ===")
     nome = input("Digite seu nome: ")
-    data_de_nascimento = input("Digite seu e-mail: ")
+    data_de_nascimento = input("Digite seu aniversário: ")
     ra = input("Digite seu ra: ")
 
     novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra)
@@ -51,7 +51,7 @@ def adicionar_aluno(lista_alunos):
 #função para encontrar um aluno na lista
 def encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar):
     data_de_nascimento_buscar_lower = data_de_nascimento_buscar.lower()
-    data_de_nascimento_buscar = input("Digite o e-mail do aluno: ")
+    data_de_nascimento_buscar = input("Digite o aniversário do aluno: ")
     for aluno in lista_alunos: 
         if aluno.data_de_nascimento.lower() == data_de_nascimento_buscar_lower:
             return aluno
@@ -74,7 +74,7 @@ def atualizar_alunos(lista_alunos):
     #Mostrar lista
     mostrar_todos_alunos(lista_alunos)
     print("\n=== Atualizar dados do aluno ===")
-    data_de_nascimento_buscar = input("\nDigite o e-mail do aluno: ")
+    data_de_nascimento_buscar = input("\nDigite o aniversário do aluno: ")
     aluno_para_atualizar = encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar)
 
     if aluno_para_atualizar: 
@@ -84,8 +84,8 @@ def atualizar_alunos(lista_alunos):
         print(f"\nNome atual: {aluno_para_atualizar.nome}")
         novo_nome = input("Novo nome: ")
 
-        print(f"\nE-mail atual: {aluno_para_atualizar.data_de_nascimento}")
-        novo_data_de_nascimento = input("Novo e-mail: ")
+        print(f"\naniversário atual: {aluno_para_atualizar.data_de_nascimento}")
+        novo_data_de_nascimento = input("Novo aniversário: ")
         
         print(f"\nra atual: {aluno_para_atualizar.ra}")
         novo_ra = input("Novo ra: ")
@@ -99,7 +99,7 @@ def atualizar_alunos(lista_alunos):
         
         print(f"\nDados do aluno: {data_de_nascimento_buscar} atualizados com sucesso!")
     else:
-        print(f"\naluno com e-mail: {data_de_nascimento_buscar} não encontrado.")
+        print(f"\naluno com aniversário: {data_de_nascimento_buscar} não encontrado.")
 
 #função para excluir um aluno
 def excluir_aluno(lista_aluno):
@@ -108,7 +108,7 @@ def excluir_aluno(lista_aluno):
     
     mostrar_todos_alunos(lista_alunos)
 
-    data_de_nascimento_buscar = input("\nDigite o e-mail do aluno que deseja excluir: ")
+    data_de_nascimento_buscar = input("\nDigite o aniversário do aluno que deseja excluir: ")
 
     aluno_para_remover = encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar)
 
