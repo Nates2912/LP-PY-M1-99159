@@ -44,21 +44,22 @@ def adicionar_aluno(lista_alunos):
     data_de_nascimento = input("Digite seu aniversário: ")
     ra = input("Digite seu ra: ")
     curso = input("Digite seu curso: ")
-    endereco= Endereco(input("Digite seu endereço: ")),
-    logradouro = input("Digite seu logradouro"),
-    numero=input("Digite o número da sua casa: "),
+
+    
+    logradouro = input("Digite seu logradouro")
+    numero=input("Digite o número da sua casa: ")
     cidade= input("Digite sua cidade: ")
     estado= input("Digite seu estado: ")
 
-
-    novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra, curso=curso, endereco=endereco, logradouro=logradouro, numero=numero, cidade=cidade, estado =estado)
+    novo_endereco = Endereco(logradouro=logradouro, numero=numero, cidade=cidade, estado=estado)
+    novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra, curso=curso, endereco=novo_endereco)
     lista_alunos.append(novo_aluno)
     print(f"\nAluno {nome} adicionado com sucesso!")
 
 #função para encontrar um aluno na lista
 def encontrar_aluno_por_nome(lista_alunos, nome_buscar):
     nome_buscar_lower = nome_buscar.lower()
-    nome_buscar = input("Digite o aniversário do aluno: ")
+    nome_buscar = input("Digite o nome do aluno: ")
     for aluno in lista_alunos: 
         if aluno.nome.lower() == nome_buscar_lower:
             return aluno
