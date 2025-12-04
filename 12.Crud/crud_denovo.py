@@ -30,9 +30,14 @@ class Produto:
 
 
 #função para verificar se a lista tá vazia
-def lista_esta_vazia(lista_clientes):
+def lista_esta_vazia_cliente(lista_clientes):
     if not lista_clientes:
         print("Não há clientes cadastrados.")
+        return True
+    return False
+def lista_esta_vazia_produto(lista_produto):
+    if not lista_produto:
+        print("Não há produtos cadastrados.")
         return True
     return False
 
@@ -42,8 +47,20 @@ def adicionar_cliente(lista_clientes):
     nome = input("Digite seu nome: ")
     email = input("Digite seu e-mail: ")
     telefone = input("Digite seu telefone: ")
+    endereco = input("Digite seu endereço")
 
-    novo_cliente = Cliente(nome=nome, email=email, telefone=telefone)
+    novo_cliente = Cliente(nome=nome, email=email, telefone=telefone, endereco=endereco)
+    lista_clientes.append(novo_cliente)
+    print(f"\nCliente {nome} adicionado com sucesso!")
+#função para adicionar um novo produto na lista
+def adicionar_cliente(lista_clientes):
+    print("\n=== Adicionar novo cliente ===")
+    nome = input("Digite seu nome: ")
+    email = input("Digite seu e-mail: ")
+    telefone = input("Digite seu telefone: ")
+    endereco = input("Digite seu endereço")
+
+    novo_cliente = Cliente(nome=nome, email=email, telefone=telefone, endereco=endereco)
     lista_clientes.append(novo_cliente)
     print(f"\nCliente {nome} adicionado com sucesso!")
 
