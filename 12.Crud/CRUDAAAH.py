@@ -26,8 +26,8 @@ class Aluno:
     #a classe normalmente e maiusculo e o objeto minusculo
 
     def mostrar_dados(self):
-        print(f"\n===ALUNO===\nNome: {self.nome} \nAniversário: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso{self.curso}")
-        print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.endereco.estado}")
+        print(f"\n===ALUNO===\nNome: {self.nome} \nAniversário: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso: {self.curso}")
+        print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} \nEstado: {self.endereco.estado}")
 
 
 #função para verificar se a lista tá vazia
@@ -42,11 +42,11 @@ def adicionar_aluno(lista_alunos):
     print("\n=== Adicionar novo aluno ===")
     nome = input("Digite seu nome: ")
     data_de_nascimento = input("Digite seu aniversário: ")
-    ra = input("Digite seu ra: ")
+    ra = input("Digite seu R.A: ")
     curso = input("Digite seu curso: ")
 
     
-    logradouro = input("Digite seu logradouro")
+    logradouro = input("Digite seu logradouro: ")
     numero=input("Digite o número da sua casa: ")
     cidade= input("Digite sua cidade: ")
     estado= input("Digite seu estado: ")
@@ -59,7 +59,6 @@ def adicionar_aluno(lista_alunos):
 #função para encontrar um aluno na lista
 def encontrar_aluno_por_nome(lista_alunos, nome_buscar):
     nome_buscar_lower = nome_buscar.lower()
-    nome_buscar = input("Digite o nome do aluno: ")
     for aluno in lista_alunos: 
         if aluno.nome.lower() == nome_buscar_lower:
             return aluno
@@ -69,7 +68,6 @@ def encontrar_aluno_por_nome(lista_alunos, nome_buscar):
 def mostrar_todos_alunos(lista_alunos):
     if lista_esta_vazia(lista_alunos):
         return
-    
     print("\n=== Lista de alunos ===")
     for aluno in lista_alunos:
         aluno.mostrar_dados()
@@ -82,7 +80,7 @@ def atualizar_alunos(lista_alunos):
     #Mostrar lista
     mostrar_todos_alunos(lista_alunos)
     print("\n=== Atualizar dados do aluno ===")
-    nome_buscar = input("\nDigite o nome do aluno: ")
+    nome_buscar = input("\nDigite o nome do aluno que deseja atualizar: ")
     aluno_para_atualizar = encontrar_aluno_por_nome(lista_alunos, nome_buscar)
 
     if aluno_para_atualizar: 
@@ -149,7 +147,7 @@ def excluir_aluno(lista_aluno):
 #mostrando menu.
 while True:
     print("""
-=== GERENCIADOR DE alunoS ===       
+=== GERENCIADOR DE ALUNOS ===       
 1 - Adicionar         
 2 - Mostrar todos    
 3 - Atualizar     
