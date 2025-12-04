@@ -26,7 +26,8 @@ class Aluno:
     #a classe normalmente e maiusculo e o objeto minusculo
 
     def mostrar_dados(self):
-        print(f"Nome: {self.nome} \nE-mail: {self.email} \nR.A: {self.ra} \n ==ENDEREÇO==\n Logadouro:: {self.endereco.logradouro}\n Número: {self.endereco.numero}\n Cidade: {self.endereco.cidade}"")
+        print(f"Nome: {self.nome} \nE-mail: {self.email} \nR.A: {self.ra}")
+        print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.estado}")
 
 
 #função para verificar se a lista tá vazia
