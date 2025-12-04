@@ -48,9 +48,10 @@ def adicionar_aluno(lista_alunos):
     logradouro = input("Digite seu logradouro"),
     numero=input("Digite o número da sua casa: "),
     cidade= input("Digite sua cidade: ")
+    estado= input("Digite seu estado: ")
 
 
-    novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra, curso=curso, endereco=endereco, logradouro=logradouro, numero=numero, cidade=cidade  )
+    novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra, curso=curso, endereco=endereco, logradouro=logradouro, numero=numero, cidade=cidade, estado =estado)
     lista_alunos.append(novo_aluno)
     print(f"\nAluno {nome} adicionado com sucesso!")
 
