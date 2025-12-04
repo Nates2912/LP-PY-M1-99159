@@ -16,7 +16,7 @@ class Aluno:
     #atributos da classe
     #atributos sao variaveis que pertecem a classe
     nome: str
-    email: str
+    data_de_nascimento: str
     ra: str
     curso: str
     endereco = Endereco
@@ -26,7 +26,7 @@ class Aluno:
     #a classe normalmente e maiusculo e o objeto minusculo
 
     def mostrar_dados(self):
-        print(f"Nome: {self.nome} \nE-mail: {self.email} \nR.A: {self.ra}")
+        print(f"\n===ALUNO===\nNome: {self.nome} \nE-mail: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso{self.curso}")
         print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.estado}")
 
 
@@ -41,19 +41,19 @@ def lista_esta_vazia(lista_alunos):
 def adicionar_aluno(lista_alunos):
     print("\n=== Adicionar novo aluno ===")
     nome = input("Digite seu nome: ")
-    email = input("Digite seu e-mail: ")
+    data_de_nascimento = input("Digite seu e-mail: ")
     ra = input("Digite seu ra: ")
 
-    novo_aluno = Aluno(nome=nome, email=email, ra=ra)
+    novo_aluno = Aluno(nome=nome, data_de_nascimento=data_de_nascimento, ra=ra)
     lista_alunos.append(novo_aluno)
     print(f"\naluno {nome} adicionado com sucesso!")
 
 #função para encontrar um aluno na lista
-def encontrar_aluno_por_email(lista_alunos, email_buscar):
-    email_buscar_lower = email_buscar.lower()
-    email_buscar = input("Digite o e-mail do aluno: ")
+def encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar):
+    data_de_nascimento_buscar_lower = data_de_nascimento_buscar.lower()
+    data_de_nascimento_buscar = input("Digite o e-mail do aluno: ")
     for aluno in lista_alunos: 
-        if aluno.email.lower() == email_buscar_lower:
+        if aluno.data_de_nascimento.lower() == data_de_nascimento_buscar_lower:
             return aluno
     return None #significa retornar vazio, sem conteúdo
 
@@ -74,8 +74,8 @@ def atualizar_alunos(lista_alunos):
     #Mostrar lista
     mostrar_todos_alunos(lista_alunos)
     print("\n=== Atualizar dados do aluno ===")
-    email_buscar = input("\nDigite o e-mail do aluno: ")
-    aluno_para_atualizar = encontrar_aluno_por_email(lista_alunos, email_buscar)
+    data_de_nascimento_buscar = input("\nDigite o e-mail do aluno: ")
+    aluno_para_atualizar = encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar)
 
     if aluno_para_atualizar: 
         print("\nPessoa Encontrada. ")
@@ -84,22 +84,22 @@ def atualizar_alunos(lista_alunos):
         print(f"\nNome atual: {aluno_para_atualizar.nome}")
         novo_nome = input("Novo nome: ")
 
-        print(f"\nE-mail atual: {aluno_para_atualizar.email}")
-        novo_email = input("Novo e-mail: ")
+        print(f"\nE-mail atual: {aluno_para_atualizar.data_de_nascimento}")
+        novo_data_de_nascimento = input("Novo e-mail: ")
         
         print(f"\nra atual: {aluno_para_atualizar.ra}")
         novo_ra = input("Novo ra: ")
 
         if novo_nome:
             aluno_para_atualizar.nome = novo_nome
-        if novo_email:
-            aluno_para_atualizar.email = novo_email
+        if novo_data_de_nascimento:
+            aluno_para_atualizar.data_de_nascimento = novo_data_de_nascimento
         if novo_ra:
             aluno_para_atualizar.ra = novo_ra
         
-        print(f"\nDados do aluno: {email_buscar} atualizados com sucesso!")
+        print(f"\nDados do aluno: {data_de_nascimento_buscar} atualizados com sucesso!")
     else:
-        print(f"\naluno com e-mail: {email_buscar} não encontrado.")
+        print(f"\naluno com e-mail: {data_de_nascimento_buscar} não encontrado.")
 
 #função para excluir um aluno
 def excluir_aluno(lista_aluno):
@@ -108,14 +108,14 @@ def excluir_aluno(lista_aluno):
     
     mostrar_todos_alunos(lista_alunos)
 
-    email_buscar = input("\nDigite o e-mail do aluno que deseja excluir: ")
+    data_de_nascimento_buscar = input("\nDigite o e-mail do aluno que deseja excluir: ")
 
-    aluno_para_remover = encontrar_aluno_por_email(lista_alunos, email_buscar)
+    aluno_para_remover = encontrar_aluno_por_data_de_nascimento(lista_alunos, data_de_nascimento_buscar)
 
     if aluno_para_remover:
         lista_aluno.remove(aluno_para_remover)
-        print(f"\naluno {aluno_para_remover.email} excluído com sucesso!")
-    else: print(f"\nCielnte com o nome {email_buscar} não encontrado")
+        print(f"\naluno {aluno_para_remover.data_de_nascimento} excluído com sucesso!")
+    else: print(f"\nCielnte com o nome {data_de_nascimento_buscar} não encontrado")
 
 
 #mostrando menu.
