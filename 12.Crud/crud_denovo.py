@@ -52,17 +52,18 @@ def adicionar_cliente(lista_clientes):
     novo_cliente = Cliente(nome=nome, email=email, telefone=telefone, endereco=endereco)
     lista_clientes.append(novo_cliente)
     print(f"\nCliente {nome} adicionado com sucesso!")
+
 #função para adicionar um novo produto na lista
 def adicionar_cliente(lista_clientes):
     print("\n=== Adicionar novo cliente ===")
-    nome = input("Digite seu nome: ")
-    email = input("Digite seu e-mail: ")
-    telefone = input("Digite seu telefone: ")
-    endereco = input("Digite seu endereço")
+    nome_produto = input("Digite seu produto: ")
+    quantidade = input("Digite sua quantidade: ")
+    lote = input("Digite seu lote: ")
+    validade = input("Digite sua validade")
 
-    novo_cliente = Cliente(nome=nome, email=email, telefone=telefone, endereco=endereco)
+    novo_cliente = Cliente(nome_produto=nome_produto, quantidade=quantidade, lote=lote, validade=validade)
     lista_clientes.append(novo_cliente)
-    print(f"\nCliente {nome} adicionado com sucesso!")
+    print(f"\nCliente {nome_produto} adicionado com sucesso!")
 
 #função para encontrar um cliente na lista
 def encontrar_cliente_por_email(lista_clientes, email_buscar):
@@ -75,7 +76,7 @@ def encontrar_cliente_por_email(lista_clientes, email_buscar):
 
 #funcao para mostrar todos os clientes
 def mostrar_todos_clientes(lista_clientes):
-    if lista_esta_vazia(lista_clientes):
+    if lista_esta_vazia_cliente(lista_clientes):
         return
     
     print("\n=== Lista de clientes ===")
@@ -84,7 +85,7 @@ def mostrar_todos_clientes(lista_clientes):
 
 #função para atualizar clientes
 def atualizar_clientes(lista_clientes):
-    if lista_esta_vazia(lista_clientes):
+    if lista_esta_vazia_cliente(lista_clientes):
         return
     
     #Mostrar lista
@@ -119,7 +120,7 @@ def atualizar_clientes(lista_clientes):
 
 #função para excluir um cliente
 def excluir_cliente(lista_cliente):
-    if lista_esta_vazia(lista_clientes):
+    if lista_esta_vazia_cliente(lista_clientes):
         return
     
     mostrar_todos_clientes(lista_clientes)
