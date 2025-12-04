@@ -98,13 +98,13 @@ def atualizar_alunos(lista_alunos):
         print(f"\nCurso atual: {aluno_para_atualizar.curso}")
         novo_curso = input("Novo curso: ")
 
-        print(f"\nLogradouro atual: {aluno_para_atualizar.logradouro}")
+        print(f"\nLogradouro atual: {aluno_para_atualizar.endereco.logradouro}")
         novo_logradouro = input("Novo logradouro: ")
-        print(f"\nNúmero atual: {aluno_para_atualizar.numero}")
+        print(f"\nNúmero atual: {aluno_para_atualizar.endereco.numero}")
         novo_numero = input("Novo número: ")
-        print(f"\nCidade atual: {aluno_para_atualizar.cidade}")
+        print(f"\nCidade atual: {aluno_para_atualizar.endereco.cidade}")
         novo_cidade = input("Nova cidade: ")
-        print(f"\nEstado atual: {aluno_para_atualizar.estado}")
+        print(f"\nEstado atual: {aluno_para_atualizar.endereco.estado}")
         novo_estado = input("Novo estado: ")
 
         if novo_nome:
