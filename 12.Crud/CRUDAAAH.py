@@ -19,7 +19,7 @@ class Aluno:
     data_de_nascimento: str
     ra: str
     curso: str
-    endereco = Endereco
+    endereco : Endereco
 
     #metodo para mostrar as informações dos alunos
     #método é o nome dado a uma função que pertence a classe
@@ -27,7 +27,7 @@ class Aluno:
 
     def mostrar_dados(self):
         print(f"\n===ALUNO===\nNome: {self.nome} \nAniversário: {self.data_de_nascimento} \nR.A: {self.ra} \nCurso{self.curso}")
-        print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.estado}")
+        print(f"\n===ENDEREÇO===\nLogadouro: {self.endereco.logradouro} \nNúmero: {self.endereco.numero} \nCidade: {self.endereco.cidade} Estado: {self.endereco.estado}")
 
 
 #função para verificar se a lista tá vazia
